@@ -9,17 +9,17 @@ Para cargar las dependencias y ejecutar las aplicaciones Spring Boot, sigue esto
 1. **Cargar Dependencias**:
   Ejecuta el siguiente comando en la raíz del proyecto para cargar todas las dependencias necesarias:
   ```bash
-  ./mvnw clean install
+  ./mvn clean install
   ```
 
 2. **Ejecutar Aplicaciones**:
   Navega a cada uno de los directorios de los microservicios y ejecuta el siguiente comando para iniciar cada aplicación:
   ```bash
-  ./mvnw spring-boot:run
+  ./mvn spring-boot:run
   ```
 
   Alternativamente, puedes empaquetar las aplicaciones y ejecutarlas como archivos JAR:
   ```bash
-  ./mvnw clean package
+  ./mvn clean package
   java -jar target/nombre-del-archivo.jar
   ```
