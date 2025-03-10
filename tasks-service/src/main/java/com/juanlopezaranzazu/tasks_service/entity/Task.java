@@ -17,6 +17,6 @@ public class Task {
     @Column(nullable = false)
     private String description; // descripcion
 
-    @Column(nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long userId; // referencia al usuario
 }

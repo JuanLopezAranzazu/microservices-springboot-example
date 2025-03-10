@@ -3,6 +3,7 @@ package com.juanlopezaranzazu.tasks_service.controller;
 import com.juanlopezaranzazu.tasks_service.dto.TaskRequest;
 import com.juanlopezaranzazu.tasks_service.dto.TaskResponse;
 import com.juanlopezaranzazu.tasks_service.service.TaskServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,7 @@ public class TaskController {
     // crear una tarea
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<TaskResponse> createTask(@RequestBody TaskRequest taskRequest) {
+    public ResponseEntity<TaskResponse> createTask(@Valid @RequestBody TaskRequest taskRequest) {
         return ResponseEntity.ok(taskService.createTask(taskRequest));
     }
 
@@ -49,7 +50,7 @@ public class TaskController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<TaskResponse> updateTask(
             @PathVariable Long id,
-            @RequestBody TaskRequest taskRequest) {
+            @Valid @RequestBody TaskRequest taskRequest) {
         return ResponseEntity.ok(taskService.updateTask(id, taskRequest));
     }
 
